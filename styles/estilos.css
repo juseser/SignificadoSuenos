@@ -13,7 +13,6 @@ header {
     text-align: center;
 }
 
-/*Justificar todo el texto que se muestra en el intro*/
 #intro p {
     text-align: justify;
 }
@@ -87,51 +86,31 @@ footer {
     width: 100%;
 }
 
-footer button {
-    background-color: #4caf50;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    padding: 12px 24px;
-    transition: background-color 0.3s ease;
-}
-
-footer button:hover {
-    background-color: #45a049;
-    transform: translateY(-2px);
-}
-
-.btn-inicio {
-    background-color: #4caf50;
-    border: none;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    margin-top: 10px;
-    padding: 12px 24px;
-    transition: background-color 0.3s ease;
-}
-
-.btn-inicio:hover {
-    background-color: #77d37b;
-    transform: translateY(-2px);
-}
-
+footer button,
+.btn-inicio,
 .btn-calcular {
     background-color: #4caf50;
     border: none;
     border-radius: 8px;
     color: white;
     cursor: pointer;
-    margin-top: 10px;
-    padding: 6px 12px;
     transition: background-color 0.3s ease;
 }
 
+footer button:hover,
+.btn-inicio:hover,
 .btn-calcular:hover {
     background-color: #77d37b;
     transform: translateY(-2px);
+}
+
+.btn-inicio, .btn-calcular {
+    margin-top: 10px;
+    padding: 12px 24px;
+}
+
+.btn-calcular {
+    padding: 6px 12px;
 }
 
 #resultado {
@@ -173,7 +152,6 @@ footer button:hover {
     color: white;
 }
 
-/* Input de búsqueda */
 #search-input {
     border: 1px solid #ccc;
     border-radius: 6px;
@@ -185,7 +163,6 @@ footer button:hover {
     width: 100%;
 }
 
-/* Contenedor de paginación */
 #pagination-container {
     display: flex;
     flex-wrap: wrap;
@@ -248,15 +225,16 @@ footer button:hover {
     }
 
     footer {
+        position: static;
         padding: 15px;
-    }
-
-    #paginacion button {
-        margin: 5px;
-        padding: 6px 12px;
     }
 
     #tituloLista {
         font-size: 1.2rem;
+        text-align: center;
+    }
+
+    header, section {
+        padding: 15px;
     }
 }
