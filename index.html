@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/estilos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>😴</text></svg>">
+    <title>Significado de los Sueños</title>
+    <meta name="description" content="Descubre el significado de tus sueños y cómo interpretarlos. Calcula tu calidad del sueño con nuestra herramienta gratuita.">
+</head>
+
+<body>
+    <header>
+        <h1>Significado de los Sueños</h1>
+        <p class="subtitulo">Explora el mundo de los sueños y descubre qué revelan sobre ti</p>
+    </header>
+
+    <nav>
+        <a href="#intro">Inicio</a>
+        <a href="#significado">Significado de los sueños</a>
+        <a href="#calculadora">Calculadora de Sueño</a>
+        <a href="#politicas">Políticas de privacidad</a>
+        <a href="#contacto">Contacto</a>
+        <a href="#terminos">Términos y condiciones</a>
+    </nav>
+
+    <main>
+        <section id="intro">
+            <h2>¿Qué significan tus sueños?</h2>
+            <p>Los sueños son una ventana al subconsciente. A lo largo de la historia, se han interpretado como mensajes del alma, señales del universo o simplemente como el resultado de nuestras emociones diarias.</p>
+            <p>El significado de los sueños es un tema que ha fascinado a la humanidad desde tiempos antiguos. En general, los sueños se pueden interpretar desde tres enfoques principales:</p>
+
+            <h3>🔹 1. Psicológico (Freud, Jung, etc.)</h3>
+            <p>
+                <strong>Sigmund Freud:</strong> decía que los sueños revelan deseos inconscientes, especialmente reprimidos.<br>
+                <strong>Carl Jung:</strong> los veía como símbolos que representan aspectos de nuestro "yo interior" o del inconsciente colectivo.<br>
+                <em>Ejemplo:</em> Soñar con volar puede reflejar deseos de libertad o escape.
+            </p>
+
+            <h3>🔹 2. Neurocientífico</h3>
+            <p>
+                Desde la ciencia moderna:<br>
+                Los sueños son una actividad del cerebro mientras dormimos, organizando información, emociones o experiencias recientes.<br>
+                Pueden servir para procesar memorias o resolver problemas.<br>
+                No todos los sueños tienen un "significado oculto", muchos son aleatorios.
+            </p>
+
+            <h3>🔹 3. Espiritual o Esotérico</h3>
+            <p>
+                Algunas culturas creen que los sueños pueden ser mensajes espirituales, premoniciones o señales del subconsciente.<br>
+                Se usan libros o guías de interpretación para dar sentido a símbolos como serpientes, agua, fuego, etc.<br>
+                <em>Ejemplo:</em> Soñar con agua clara puede interpretarse como tranquilidad emocional o limpieza espiritual.
+            </p>
+
+            <h3>🧠 ¿Por qué soñamos cosas raras?</h3>
+            <p>
+                Porque el cerebro está asociando libremente recuerdos, emociones y sensaciones mientras descansa.<br>
+                En fase REM, la lógica se relaja y predominan las imágenes y emociones.
+            </p>
+        </section>
+
+        <section id="significado" class="suenos">
+            <h2>Significados de los sueños</h2>
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Buscar por nombre de sueño...">
+            </div>
+            <!-- Artículos que se mostrarán dinámicamente -->
+            <div id="sueños-lista"></div>
+        </section>
+
+        <div id="pagination-container"></div>
+
+        <section id="calculadora">
+            <h2>Calculadora de Calidad del Sueño</h2>
+
+            <label for="horaDormir">¿A qué hora te dormiste?</label>
+            <input type="time" id="horaDormir">
+
+            <label for="horaDespertar">¿A qué hora te despertaste?</label>
+            <input type="time" id="horaDespertar">
+
+            <button id="calcularSueno" class="btn-calcular">Calcular</button>
+
+            <div id="resultado"></div>
+        </section>
+
+        <section id="politicas">
+            <h2>Políticas de privacidad</h2>
+            <p>Tu privacidad es importante para nosotros. Esta política explica cómo recolectamos, usamos y protegemos tu información personal cuando visitas nuestro sitio web.</p>
+            <ul>
+                <li>📌 Recopilamos datos anónimos (como tu navegador o país) para mejorar la experiencia de usuario.</li>
+                <li>🔒 No compartimos tus datos personales con terceros sin tu consentimiento.</li>
+                <li>📧 Si nos contactas, tus datos (como correo electrónico) solo se usarán para responderte.</li>
+                <li>📝 Puedes solicitar la eliminación de tu información en cualquier momento.</li>
+            </ul>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>¿Tienes preguntas, sugerencias o deseas colaborar con nosotros? ¡Estamos encantados de escucharte!</p>
+            <ul>
+                <li>✉️ Correo electrónico: <strong>tusuenosignifica@gmail.com</strong></li>
+            </ul>
+        </section>
+
+        <section id="terminos">
+            <h2>Términos y condiciones</h2>
+            <p>Al utilizar nuestro sitio, aceptas los siguientes términos:</p>
+            <ul>
+                <li>📚 El contenido publicado es de carácter informativo y no sustituye asesoramiento médico o profesional.</li>
+                <li>🚫 Está prohibido copiar o reproducir contenido sin autorización previa.</li>
+                <li>🧾 Nos reservamos el derecho de modificar estos términos en cualquier momento.</li>
+                <li>👁️‍🗨️ El uso continuo del sitio implica aceptación de dichos cambios.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <button 
+            onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            aria-label="Volver al inicio de la página"
+        >
+            🔝 Volver al inicio
+        </button>
+        <strong>&copy; 2025 Significado de los Sueños. Todos los derechos reservados.</strong>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
