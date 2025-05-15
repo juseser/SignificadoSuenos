@@ -1,3 +1,5 @@
+/* Versión responsive optimizada - v2 */
+
 body {
     background: linear-gradient(to bottom, #f3f3f3, #e0e0e0);
     font-family: 'Roboto', sans-serif; 
@@ -236,5 +238,19 @@ footer button:hover,
 
     header, section {
         padding: 15px;
+    }
+
+    /* Ajustes para calculadora de sueño */
+    form.calculadora-suenos {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    form.calculadora-suenos input,
+    form.calculadora-suenos select,
+    form.calculadora-suenos button {
+        width: 100%;
+        font-size: 1rem;
     }
 }
