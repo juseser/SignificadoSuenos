@@ -154,13 +154,21 @@ footer button:hover,
     color: white;
 }
 
+#search-container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px; /* para que no pegue con los bordes del móvil */
+}
+
 #search-input {
     border: 1px solid #ccc;
     border-radius: 6px;
+    box-sizing: border-box;
     display: block;
     font-size: 16px;
     margin: 20px 0;
-    max-width: 400px;
+    max-width: 100%;
     padding: 10px;
     width: 100%;
 }
