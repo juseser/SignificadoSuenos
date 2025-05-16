@@ -148,5 +148,10 @@ inputBusqueda.addEventListener("input", () => {
 // Mostrar sueños al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
     mostrarSueños(sueñosFiltrados, paginaActual);  // Al cargar la página, mostramos los sueños en la primera página
+    const mail = 'tusuenosignifica' + '@' + 'gmail.com';
+    const contenedorCorreo = document.getElementById('correo-obfuscado');
+    if (contenedorCorreo) {
+        contenedorCorreo.innerHTML = '<strong>' + mail + '</strong>';
+    }
 });
 
