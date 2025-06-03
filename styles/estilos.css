@@ -208,6 +208,22 @@ footer button:hover,
     cursor: default;
 }
 
+#faq {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 8px;
+}
+#faq h2 {
+  /*font-size: 1rem;*/
+  margin-bottom: 1rem;
+}
+
+.pregunta p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+
 /* 🌐 Estilos responsivos para móviles */
 @media (max-width: 768px) {
     .suenos-lista {
