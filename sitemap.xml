@@ -91,6 +91,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tusuenosignifica.com/suenos/aranas.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tusuenosignifica.com/suenos/avion.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tusuenosignifica.com/suenos/ratas.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tusuenosignifica.com/suenos/telefono.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

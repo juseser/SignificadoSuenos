@@ -1,56 +1,56 @@
-// Lógica Calculadora de Sueño
+// Lógica Calculadora de Sueño (solo en páginas que la incluyen)
 const boton = document.querySelector('#calcularSueno');//capturamos el boton
+if (boton) {
+    boton.addEventListener('click', () => {
+        const dormir = document.querySelector("#horaDormir").value;//capturamos la hora en que nos acostamos a dormir
+        const despertar = document.querySelector("#horaDespertar").value;//capturamos la hora en que nos levantamos
 
-//Agregamos el evento click al boton
-boton.addEventListener('click', () => {
-    const dormir = document.querySelector("#horaDormir").value;//capturamos la hora en que nos acostamos a dormir
-    const despertar = document.querySelector("#horaDespertar").value;//capturamos la hora en que nos levantamos
+        //validamos que ambas horas no estan vacias
+        if (!dormir || !despertar) {
+            document.querySelector("#resultado").innerText = "Por favor, ingresa ambas horas.";//Agregamos el texto al div
+            return;
+        }
 
-    //validamos que ambas horas no estan vacias
-    if (!dormir || !despertar) {
-        document.querySelector("#resultado").innerText = "Por favor, ingresa ambas horas.";//Agregamos el texto al div
-        return;
-    }
+        const [hDormir, mDormir] = dormir.split(":").map((elemento)=>Number(elemento));//separamos las horas y los minutos con split y luego con map los convertimos en numero 
+        const [hDespertar, mDespertar] = despertar.split(":").map((elemento)=>Number(elemento));
 
-    const [hDormir, mDormir] = dormir.split(":").map((elemento)=>Number(elemento));//separamos las horas y los minutos con split y luego con map los convertimos en numero 
-    const [hDespertar, mDespertar] = despertar.split(":").map((elemento)=>Number(elemento));
+        const tDormir = new Date(); //creamos un nuevo objeto de fecha y hora que representa el momento actual (fecha y hora del sistema en ese instante).
+                                    //Por ejemplo, si hoy es 15 de mayo de 2025 a las 10:30 AM, ese Date representará:
+                                    //2025-05-15T10:30:00
+        tDormir.setHours(hDormir, mDormir, 0); //modificamos solo la hora y los minutos del objeto fecha
 
-    const tDormir = new Date(); //creamos un nuevo objeto de fecha y hora que representa el momento actual (fecha y hora del sistema en ese instante).
-                                //Por ejemplo, si hoy es 15 de mayo de 2025 a las 10:30 AM, ese Date representará:
-                                //2025-05-15T10:30:00
-    tDormir.setHours(hDormir, mDormir, 0); //modificamos solo la hora y los minutos del objeto fecha
+        const tDespertar = new Date();
+        tDespertar.setHours(hDespertar, mDespertar, 0);
 
-    const tDespertar = new Date();
-    tDespertar.setHours(hDespertar, mDespertar, 0);
+        if (tDespertar <= tDormir) tDespertar.setDate(tDespertar.getDate() + 1);//Si la Si la hora en que me desperté es menor (o igual) a la hora en que me dormí, le sumamos un día a la hora de despertar para que los cálculos tengan sentido.
 
-    if (tDespertar <= tDormir) tDespertar.setDate(tDespertar.getDate() + 1);//Si la Si la hora en que me desperté es menor (o igual) a la hora en que me dormí, le sumamos un día a la hora de despertar para que los cálculos tengan sentido.
+        const diffMs = tDespertar - tDormir; //Calcula la diferencia entre las dos fechas (en milisegundos)
+                                            // Esto nos da el tiempo transcurrido entre la hora de dormir y la de despertar
+        const horas = Math.floor(diffMs / (1000 * 60 * 60)); // Convierte la diferencia de milisegundos a horas
+                                                          // (1000 milisegundos = 1 segundo, 60 segundos = 1 minuto, 60 minutos = 1 hora)
+                                                          // Math.floor redondea hacia abajo el resultado (por ejemplo, 2.5 horas -> 2)
 
-    const diffMs = tDespertar - tDormir; //Calcula la diferencia entre las dos fechas (en milisegundos)
-                                        // Esto nos da el tiempo transcurrido entre la hora de dormir y la de despertar
-    const horas = Math.floor(diffMs / (1000 * 60 * 60)); // Convierte la diferencia de milisegundos a horas
-                                                      // (1000 milisegundos = 1 segundo, 60 segundos = 1 minuto, 60 minutos = 1 hora)
-                                                      // Math.floor redondea hacia abajo el resultado (por ejemplo, 2.5 horas -> 2)
+        const minutos = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60)); // Calcula los minutos restantes después de calcular las horas
+                                                                          // El operador % obtiene el residuo de la división de los milisegundos
+                                                                          // para obtener solo el tiempo que no completó una hora completa
+                                                                          // Luego lo divide entre 1000 * 60 (milisegundos en un minuto)
+                                                                          // y usa Math.floor para redondear el valor hacia abajo
 
-    const minutos = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60)); // Calcula los minutos restantes después de calcular las horas
-                                                                      // El operador % obtiene el residuo de la división de los milisegundos
-                                                                      // para obtener solo el tiempo que no completó una hora completa
-                                                                      // Luego lo divide entre 1000 * 60 (milisegundos en un minuto)
-                                                                      // y usa Math.floor para redondear el valor hacia abajo
+        let mensaje = `Dormiste ${horas} horas y ${minutos} minutos. `;
 
-    let mensaje = `Dormiste ${horas} horas y ${minutos} minutos. `;
+        if (horas >= 7 && horas <= 9) {
+            mensaje += "¡Tu sueño fue ideal! Probablemente descansaste bien."; //a mensaje le concatenamos este texto
+        } else if (horas < 5) {
+            mensaje += "Dormiste muy poco. Es probable que tu sueño no haya sido reparador.";
+        } else if (horas > 9) {
+            mensaje += "Dormiste bastante. Tu cuerpo puede haber estado agotado.";
+        } else {
+            mensaje += "Dormiste una cantidad moderada. Podrías sentirte bien o algo cansado.";
+        }
 
-    if (horas >= 7 && horas <= 9) {
-        mensaje += "¡Tu sueño fue ideal! Probablemente descansaste bien."; //a mensaje le concatenamos este texto
-    } else if (horas < 5) {
-        mensaje += "Dormiste muy poco. Es probable que tu sueño no haya sido reparador.";
-    } else if (horas > 9) {
-        mensaje += "Dormiste bastante. Tu cuerpo puede haber estado agotado.";
-    } else {
-        mensaje += "Dormiste una cantidad moderada. Podrías sentirte bien o algo cansado.";
-    }
-
-    document.querySelector("#resultado").innerText = mensaje;
-});
+        document.querySelector("#resultado").innerText = mensaje;
+    });
+}
 
 // Lista de sueños Array de objetos
 const sueños = [
@@ -73,7 +73,10 @@ const sueños = [
     { nombre: "Soñar con Fuego", descripcion: "Simboliza transformación, pasión o destrucción según el contexto.", enlace: "suenos/fuego.html", emoji: "🔥" },
     { nombre: "Soñar con Espejos", descripcion: "Representa la autoimagen, introspección o necesidad de conocerse.", enlace: "suenos/espejo.html", emoji: "🪞" },
     { nombre: "Soñar con un Teléfono", descripcion: "Simboliza comunicación, conexión o mensajes importantes.", enlace: "suenos/telefono.html", emoji: "📱" },
-    { nombre: "Soñar con Números", descripcion: "Pueden tener significado simbólico, espiritual o personal importante.", enlace: "suenos/numeros.html", emoji: "🔢" }
+    { nombre: "Soñar con Números", descripcion: "Pueden tener significado simbólico, espiritual o personal importante.", enlace: "suenos/numeros.html", emoji: "🔢" },
+    { nombre: "Soñar con Arañas", descripcion: "Relaciona creatividad, paciencia y temores ocultos según el contexto.", enlace: "suenos/aranas.html", emoji: "🕷️" },
+    { nombre: "Soñar con Ratas", descripcion: "Puede hablar de desconfianza, alerta sanitaria o supervivencia.", enlace: "suenos/ratas.html", emoji: "🐀" },
+    { nombre: "Soñar con Aviones", descripcion: "Simboliza metas grandes, viajes o miedo a perder el control.", enlace: "suenos/avion.html", emoji: "✈️" }
 ];
 
 // Variables de paginación
@@ -138,20 +141,57 @@ const inputBusqueda = document.querySelector("#search-input");  // Seleccionamos
 let sueñosFiltrados = [...sueños];  // Hacemos una copia del array de sueños para filtrarlos según la búsqueda
 
 // Agregamos un evento para realizar la búsqueda cuando el usuario escribe
-inputBusqueda.addEventListener("input", () => {
-    const texto = inputBusqueda.value.toLowerCase();  // Obtenemos el valor del campo de búsqueda en minúsculas
-    sueñosFiltrados = sueños.filter(s => s.nombre.toLowerCase().includes(texto));  // Filtramos los sueños que contienen el texto de la búsqueda
-    paginaActual = 1;  // Reiniciamos la página a la 1 cada vez que se realice una nueva búsqueda
-    mostrarSueños(sueñosFiltrados, paginaActual);  // Volvemos a renderizar los sueños filtrados en la primera página
-});
+if (inputBusqueda) {
+    inputBusqueda.addEventListener("input", () => {
+        const texto = inputBusqueda.value.toLowerCase();  // Obtenemos el valor del campo de búsqueda en minúsculas
+        sueñosFiltrados = sueños.filter(s => s.nombre.toLowerCase().includes(texto));  // Filtramos los sueños que contienen el texto de la búsqueda
+        paginaActual = 1;  // Reiniciamos la página a la 1 cada vez que se realice una nueva búsqueda
+        mostrarSueños(sueñosFiltrados, paginaActual);  // Volvemos a renderizar los sueños filtrados en la primera página
+    });
+}
+
+// Renderiza grillas pequeñas para destacados/recientes usando los datos existentes
+const renderGrid = (contenedorId, items) => {
+    const contenedor = document.getElementById(contenedorId);
+    if (!contenedor) return;
+    contenedor.innerHTML = "";
+
+    items.forEach(item => {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "tarjeta-sueno";
+        tarjeta.innerHTML = `
+            <h3>${item.emoji} <a href="${item.enlace}">${item.nombre}</a></h3>
+            <p>${item.descripcion}</p>
+        `;
+        contenedor.appendChild(tarjeta);
+    });
+};
 
 // Mostrar sueños al cargar la página
 document.addEventListener("DOMContentLoaded", () => {
-    mostrarSueños(sueñosFiltrados, paginaActual);  // Al cargar la página, mostramos los sueños en la primera página
+    if (document.querySelector("#sueños-lista")) {
+        mostrarSueños(sueñosFiltrados, paginaActual);  // Al cargar la página, mostramos los sueños en la primera página
+    }
+
+    // Pre-rellena la búsqueda si viene desde la caja de resultados de Google
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('q');
+    if (inputBusqueda && query) {
+        inputBusqueda.value = query;
+        const texto = query.toLowerCase();
+        sueñosFiltrados = sueños.filter(s => s.nombre.toLowerCase().includes(texto));
+        paginaActual = 1;
+        mostrarSueños(sueñosFiltrados, paginaActual);
+    }
+
     const mail = 'tusuenosignifica' + '@' + 'gmail.com';
     const contenedorCorreo = document.getElementById('correo-obfuscado');
     if (contenedorCorreo) {
         contenedorCorreo.innerHTML = '<strong>' + mail + '</strong>';
     }
+
+    // Renderizamos bloques de contenido auxiliar si existen en la página
+    renderGrid("destacados-grid", sueños.slice(0, 6));
+    renderGrid("nuevos-grid", sueños.slice(-3));
 });
 

@@ -34,7 +34,44 @@
             "@context": "https://schema.org",
             "@type": "WebSite",
             "name": "Significado de los Sueños",
-            "url": "https://tusuenosignifica.com"
+            "url": "https://tusuenosignifica.com",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://tusuenosignifica.com/?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "¿Cómo interpreto un sueño de forma rápida?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Identifica el símbolo principal, anota la emoción predominante y relaciona ambas con algo que estés viviendo ahora. Después, contrasta con significados culturales o psicológicos."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿Los sueños premonitores existen?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "No hay evidencia científica de sueños premonitorios. Sin embargo, tu cerebro puede combinar señales y experiencias que te hacen anticipar posibles escenarios."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "¿Por qué sueño lo mismo varias veces?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Los sueños repetitivos suelen señalar temas pendientes o emociones no resueltas. Registrar el sueño en un diario puede ayudarte a encontrar patrones y resolverlos."
+                    }
+                }
+            ]
         }
     </script>
 
@@ -52,7 +89,9 @@
 
     <nav>
         <a href="#intro">Inicio</a>
+        <a href="#destacados">Destacados</a>
         <a href="#significado">Significado de los sueños</a>
+        <a href="#faq-general">Preguntas frecuentes</a>
         <a href="#calculadora">Calculadora de Sueño</a>
         <a href="#politicas">Políticas de privacidad</a>
         <a href="#contacto">Contacto</a>
@@ -94,6 +133,12 @@
             </p>
         </section>
 
+        <section id="destacados">
+            <h2>Top sueños más buscados</h2>
+            <p>Accede rápido a las interpretaciones que más consultan nuestros lectores.</p>
+            <div id="destacados-grid" class="tarjetas-grid"></div>
+        </section>
+
         <section id="significado" class="suenos">
             <h2>Significados de los sueños</h2>
             <div id="search-container">
@@ -104,6 +149,28 @@
         </section>
 
         <div id="pagination-container"></div>
+
+        <section id="nuevos">
+            <h2>Nuevos artículos agregados</h2>
+            <p>Contenido fresco con símbolos que reciben muchas búsquedas en Latinoamérica y España.</p>
+            <div id="nuevos-grid" class="tarjetas-grid"></div>
+        </section>
+
+        <section id="faq-general">
+            <h2>Preguntas frecuentes sobre interpretar sueños</h2>
+            <div class="faq-item">
+                <h3>¿Cómo interpreto un sueño rápido y bien?</h3>
+                <p>Reconoce el símbolo principal, anota la emoción que sentiste y conéctalo con algo que te esté pasando. Luego revisa su significado psicológico y cultural.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Son reales los sueños premonitorios?</h3>
+                <p>No hay evidencia científica. El cerebro suele combinar recuerdos y señales para anticipar posibles escenarios, pero no es magia.</p>
+            </div>
+            <div class="faq-item">
+                <h3>¿Por qué repito el mismo sueño?</h3>
+                <p>Los sueños repetitivos indican asuntos pendientes o emociones no resueltas. Lleva un diario y busca patrones para abordarlos.</p>
+            </div>
+        </section>
 
         <section id="calculadora">
             <h2>Calculadora de Calidad del Sueño</h2>
