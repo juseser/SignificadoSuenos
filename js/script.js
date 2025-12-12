@@ -76,7 +76,12 @@ const sueños = [
     { nombre: "Soñar con Números", descripcion: "Pueden tener significado simbólico, espiritual o personal importante.", enlace: "suenos/numeros.html", emoji: "🔢" },
     { nombre: "Soñar con Arañas", descripcion: "Relaciona creatividad, paciencia y temores ocultos según el contexto.", enlace: "suenos/aranas.html", emoji: "🕷️" },
     { nombre: "Soñar con Ratas", descripcion: "Puede hablar de desconfianza, alerta sanitaria o supervivencia.", enlace: "suenos/ratas.html", emoji: "🐀" },
-    { nombre: "Soñar con Aviones", descripcion: "Simboliza metas grandes, viajes o miedo a perder el control.", enlace: "suenos/avion.html", emoji: "✈️" }
+    { nombre: "Soñar con Aviones", descripcion: "Simboliza metas grandes, viajes o miedo a perder el control.", enlace: "suenos/avion.html", emoji: "✈️" },
+    { nombre: "Soñar con Sangre", descripcion: "Representa energía, vida, pasión o pérdida emocional según el contexto.", enlace: "suenos/sangre.html", emoji: "🩸" },
+    { nombre: "Soñar con Bebés", descripcion: "Simboliza nuevos comienzos, proyectos o responsabilidades en desarrollo.", enlace: "suenos/bebes.html", emoji: "👶" },
+    { nombre: "Soñar con Coches", descripcion: "Refleja control sobre tu vida, dirección o libertad de movimiento.", enlace: "suenos/coches.html", emoji: "🚗" },
+    { nombre: "Soñar con Llaves", descripcion: "Puede indicar oportunidades, acceso a algo nuevo o soluciones.", enlace: "suenos/llaves.html", emoji: "🔑" },
+    { nombre: "Soñar con Comida", descripcion: "Simboliza nutrición emocional, satisfacción o necesidades no cubiertas.", enlace: "suenos/comida.html", emoji: "🍽️" }
 ];
 
 // Variables de paginación
